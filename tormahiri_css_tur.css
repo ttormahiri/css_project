@@ -1,0 +1,74 @@
+/*
+tormahir css project;
+*/
+$font_size: 16px;
+body {
+	font-size:$font-size;
+}
+p{
+	background-color:red;
+}
+$hat:ukij tuz;
+h2{
+	font-family:$hat;
+}
+@mixin rang($name){
+	
+
+	color:$name;
+	background-color:$name;
+}
+span{
+	@include rang("red");
+}
+#man{
+	width:20*10px;
+	font-size:$font-size;
+}
+$kaglik:200px;
+$egizlik:100px;
+.rasim{
+	
+	width:$kaglik;
+	height:$egizlik;
+	shape-outside:polygon();
+	margin-right:20px;
+}
+/* extend bilan inheritance kilish*/
+p.rasim{
+	@extend.rasim;
+}
+$tipi:tormahiri;
+#badan{
+	@if $tipi == tormahiri{
+
+       width:$kaglik;
+	}@else{
+	height:$egizlik;
+
+
+	}
+}
+$haslik:(
+
+rang:red,
+hatqugliki:2px
+);
+$sani:28px/10px;
+/*
+@each $property,$kimmiti in $haslik{
+	img{
+	  font-size:$sani;
+	  color:$property;
+	}
+}
+*/
+img{
+	background-color:map-get($haslik,rang);
+}
+@function myfuntion($kimmat){
+	@return ($kimmat);
+}
+p.taz{
+	color:myfunction("blue");
+}
