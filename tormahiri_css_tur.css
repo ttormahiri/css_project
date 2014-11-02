@@ -72,3 +72,20 @@ img{
 p.taz{
 	color:myfunction("blue");
 }
+$pages: home, about, products, contact red;
+$tiz:(
+(a,b,c),
+(d,h,k)
+);
+$list:red,green;
+$new-list:prepend($list,yellow);
+
+#genral{
+	color:first($list);
+	}
+@function bizlar($kemmat){
+	@return $kemmat
+}
+li >a{
+	margin-top:bizlar(20px);
+}
